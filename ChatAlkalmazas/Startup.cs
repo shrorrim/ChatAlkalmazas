@@ -18,6 +18,7 @@ namespace ChatAlkalmazas
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSignalR();
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,15 +37,9 @@ namespace ChatAlkalmazas
                 {
                     await context.Response.WriteAsync("Hello World!");
                 });
-            });
-
-            app.UseEndpoints(endpoints =>
-            {
                 endpoints.MapControllers();
                 endpoints.MapHub<SignalRHub>("/hub");
             });
-
-
         }
     }
 }
