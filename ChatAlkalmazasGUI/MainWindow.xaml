@@ -17,8 +17,20 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-        <ListBox BorderThickness="2" Grid.Row="0" ItemsSource="{Binding Messages}" FontSize="20" FontFamily="Arial" Foreground="Purple" Background="LightGray">
-        </ListBox>
+        <ScrollViewer x:Name="scrollviewer" Grid.Row="0" VerticalScrollBarVisibility="Auto" >
+            <ItemsControl x:Name="ic" ItemsSource="{Binding Messages, Mode=OneWay}">
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="2">
+                        <StackPanel>
+                            <Label Content="{Binding Sender}"></Label>
+                            <Label Content="{Binding SendDate}"></Label>
+                            <Label Content="{Binding SentMessage}"></Label>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl>
+
+        </ScrollViewer>
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>

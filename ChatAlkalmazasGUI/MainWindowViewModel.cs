@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Microsoft.Toolkit.Mvvm.Input;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,8 +36,19 @@ namespace ChatAlkalmazasGUI
             if(!IsInDesignMode)
             {
                 Messages = new RestCollection<Message>("http://localhost:33653/", "message", "hub");
+                if (Name == null)
+                {
+                    Name = "Unknown";
+                }
 
-                
+                SendMessage = new RelayCommand(() =>
+                {
+                    Messages.Add(new Message()
+                    {
+                        Sender = Name,
+                        SentMessage = ActualMessage
+                    });
+                });
 
 
             }
