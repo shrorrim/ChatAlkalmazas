@@ -33,9 +33,16 @@ namespace ChatAlkalmazasGUI
 
         public MainWindowViewModel()
         {
-            if(!IsInDesignMode)
+            if (!IsInDesignMode)
             {
                 Messages = new RestCollection<Message>("http://localhost:33653/", "message", "hub");
+
+                Messages.Add(new Message()
+                {
+                    Sender = "Jack",
+                    SentMessage = "Hi all"
+                });
+
                 if (Name == null)
                 {
                     Name = "Unknown";

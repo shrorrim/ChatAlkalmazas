@@ -18,7 +18,8 @@
         </Grid.RowDefinitions>
 
         <ScrollViewer x:Name="scrollviewer" Grid.Row="0" VerticalScrollBarVisibility="Auto" >
-            <ItemsControl x:Name="ic" ItemsSource="{Binding Messages, Mode=OneWay}">
+            <ListBox  ItemsSource="{Binding Messages}">
+                <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="Black" BorderThickness="2">
                         <StackPanel>
@@ -28,7 +29,8 @@
                         </StackPanel>
                     </Border>
                 </DataTemplate>
-            </ItemsControl>
+                </ListBox.ItemTemplate>
+            </ListBox>
 
         </ScrollViewer>
 
