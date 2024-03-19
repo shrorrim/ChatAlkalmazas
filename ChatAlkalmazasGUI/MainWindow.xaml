@@ -18,15 +18,16 @@
         </Grid.RowDefinitions>
 
         <ScrollViewer x:Name="scrollviewer" Grid.Row="0" VerticalScrollBarVisibility="Auto" >
-            <ListBox  ItemsSource="{Binding Messages}">
+            <ListBox  ItemsSource="{Binding Messages}" >
                 <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderBrush="Black" BorderThickness="2">
-                        <StackPanel>
-                            <Label Content="{Binding Sender}"></Label>
-                            <Label Content="{Binding SendDate}"></Label>
-                            <Label Content="{Binding SentMessage}"></Label>
-                        </StackPanel>
+                    <Border BorderBrush="LightGray" BorderThickness="1">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                            <Label FontFamily="Arial" FontSize="14" Foreground="Purple" Content="{Binding Sender}"></Label>
+
+                            <Label FontFamily="Arial" FontSize="14" Foreground="Purple" Content="{Binding SentMessage}"></Label>
+                            <Label FontFamily="Arial" FontSize="14" Foreground="Purple" Content="{Binding SendDate}"></Label>
+                            </StackPanel>
                     </Border>
                 </DataTemplate>
                 </ListBox.ItemTemplate>

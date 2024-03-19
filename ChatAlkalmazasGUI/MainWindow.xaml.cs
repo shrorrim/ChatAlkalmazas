@@ -24,6 +24,7 @@ namespace ChatAlkalmazasGUI
         public MainWindow()
         {
             InitializeComponent();
+
         }
     }
 }
