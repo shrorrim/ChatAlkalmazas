@@ -27,14 +27,38 @@ namespace ChatAlkalmazasGUI
             }
         }
 
-        public string Name { get; set; }
 
-        public string ActualMessage { get; set; }
+
+
+        private string name ;
+
+        public string Name
+        {
+            get
+            {
+                
+                return name=="" ? "Unknown" : name; 
+            }
+            set { name = value; }
+        }
+
+
+        private string actualMessage;
+
+        public string ActualMessage
+        {
+            get { return actualMessage; }
+            set { actualMessage = value; }
+        }
+
 
         public MainWindowViewModel()
         {
+
             if (!IsInDesignMode)
             {
+                Name = "Unknown";
+
                 Messages = new RestCollection<Message>("http://localhost:33653/", "message", "hub");
 
                 Messages.Add(new Message()
@@ -43,10 +67,6 @@ namespace ChatAlkalmazasGUI
                     SentMessage = "Hi all"
                 });
 
-                if (Name == null)
-                {
-                    Name = "Unknown";
-                }
 
                 SendMessage = new RelayCommand(() =>
                 {
