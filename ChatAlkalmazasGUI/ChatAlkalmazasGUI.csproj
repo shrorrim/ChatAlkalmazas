@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ChatAlkalmazas\ChatAlkalmazas.csproj" />
+    <ProjectReference Include="..\Models\Models.csproj" />
   </ItemGroup>
 
 	<ItemGroup>
