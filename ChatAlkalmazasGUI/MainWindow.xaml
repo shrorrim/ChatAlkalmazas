@@ -6,6 +6,11 @@
         xmlns:local="clr-namespace:ChatAlkalmazasGUI"
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="700">
+
+    <Window.DataContext>
+        <local:MainWindowViewModel /> 
+    </Window.DataContext>
+    
     <Grid>
         <TextBox Text="ide jön majd a Binding" FontSize="20" FontFamily="Arial" Foreground="Purple" Background="LightGray" AcceptsReturn="True">
         </TextBox>
