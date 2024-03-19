@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace ChatAlkalmazasGUI
 {
@@ -12,11 +13,12 @@ namespace ChatAlkalmazasGUI
 
         public RestCollection<Message> Messages { get; set; }
 
+        public ICommand SendMessage { get; set; }
 
 
         public MainWindowViewModel()
         {
-            //Messages = new RestCollection<Message>();
+           Messages = new RestCollection<Message>("http://localhost:33653/","message","hub");
         }
 
     }
