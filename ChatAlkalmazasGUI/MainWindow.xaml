@@ -27,9 +27,9 @@
                 <ColumnDefinition Width="1*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="2" x:Name="tbName" Grid.Column="0" Text="neved" FontSize="20" FontFamily="Arial" Foreground="Purple" Background="LightGray" ></TextBox>
+            <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="2" x:Name="tbName" Grid.Column="0" Text="{Binding Name,Mode=OneWayToSource,UpdateSourceTrigger=PropertyChanged}" FontSize="20" FontFamily="Arial" Foreground="Purple" Background="LightGray" ></TextBox>
 
-            <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="2" x:Name="tbMessage" Grid.Column="1" Text="uzeneted"  FontSize="20" FontFamily="Arial" Foreground="Purple" Background="LightGray" ></TextBox>
+            <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="2" x:Name="tbMessage" Grid.Column="1" Text="{Binding ActualMessage,Mode=OneWayToSource,UpdateSourceTrigger=PropertyChanged}"  FontSize="20" FontFamily="Arial" Foreground="Purple" Background="LightGray" ></TextBox>
             <Button BorderThickness="2" Grid.Column="2" Content="Send" FontSize="25" Command="{Binding SendMessage}"></Button>
 
         </Grid>

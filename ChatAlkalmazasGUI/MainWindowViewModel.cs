@@ -26,6 +26,10 @@ namespace ChatAlkalmazasGUI
             }
         }
 
+        public string Name { get; set; }
+
+        public string ActualMessage { get; set; }
+
         public MainWindowViewModel()
         {
             if(!IsInDesignMode)
