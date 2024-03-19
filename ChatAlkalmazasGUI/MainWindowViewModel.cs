@@ -31,6 +31,9 @@ namespace ChatAlkalmazasGUI
             if(!IsInDesignMode)
             {
                 Messages = new RestCollection<Message>("http://localhost:33653/", "message", "hub");
+
+
+
             }
            
         }

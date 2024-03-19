@@ -4,15 +4,37 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatAlkalmazasGUI"
+        xmlns:model="clr-namespace:ChatAlkalmazasGUI.Models"
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="700">
 
     <Window.DataContext>
-        <local:MainWindowViewModel /> 
+        <local:MainWindowViewModel />
     </Window.DataContext>
-    
+
     <Grid>
-        <TextBox Text="ide jön majd a Binding" FontSize="20" FontFamily="Arial" Foreground="Purple" Background="LightGray" AcceptsReturn="True">
-        </TextBox>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        
+        <ListBox Grid.Row="0" ItemsSource="{Binding Messages}" FontSize="20" FontFamily="Arial" Foreground="Purple" Background="LightGray">
+        </ListBox>
+
+        <Grid Grid.Row="1" DataContext="{Binding ElementName=}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="6*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="labelName" Grid.Column="0" Content="" FontSize="20" FontFamily="Arial" Foreground="Purple" Background="LightGray" ></Label>
+
+            <Label Grid.Column="1" Content="" FontSize="20" FontFamily="Arial" Foreground="Purple" Background="LightGray" ></Label>
+            <Button Grid.Column="2" Content="Send" Command="{Binding SendMessage}"></Button>
+
+        </Grid>
+
+        
     </Grid>
 </Window>
